@@ -1,2 +1,3 @@
-# rips24_llnl
-RIPS 2024 LLNL Project
+# RIPS 2024 LLNL Project
+
+This project develops parallel-in-time solvers for challenging time-dependent problems. Many phenomena are modelled with time-dependent partial differential equations (PDEs), such as weather models and wave propagation. Historically, computer simulations for these problems have been time-dependent, marching forward in time step-by-step. However, this approach of sequential time-stepping is becoming a bottleneck as it cannot be further parallelized, thus it is unable to take advantage of increasing number of processors on modern (super)computers. To avoid this bottleneck, researchers have developed new parallel-in-time solution approaches which significantly speed up computer simulations. These approaches solve for the full space-time system all at once in parallel.
