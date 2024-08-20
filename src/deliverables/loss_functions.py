@@ -10,7 +10,6 @@ from constants import (
     testing_dim
 )
 
-## Loss Function 1 using random vectors
 class NonGalerkinLoss1Rand(nn.Module):
     """
     Loss function 1 with random vectors and constant vector.
@@ -54,7 +53,6 @@ class NonGalerkinLoss1Rand(nn.Module):
         return loss
 
 
-## Loss Function 1 using eigenvectors
 class NonGalerkinLoss1Eig(nn.Module):
     """
     Loss function 1 with eigenvectors.
@@ -107,7 +105,6 @@ class NonGalerkinLoss1Eig(nn.Module):
         return loss
   
     
-# Loss Function 2 using Eigenvectors
 class NonGalerkinLoss2Eig(nn.Module):
     """
     Loss function 2 with eigenvectors.
@@ -149,7 +146,6 @@ class NonGalerkinLoss2Eig(nn.Module):
         return loss
 
 
-# Loss Function 2 with Eigenvectors + constant vector
 class NonGalerkinLoss2EigConst(nn.Module):
     """
     Loss function 2 with eigenvectors and constant vector
@@ -256,7 +252,7 @@ class NonGalerkinLoss3Eig(nn.Module):
 
 
 class NonGalerkinLoss3EigConst(nn.Module):
-    """t
+    """
     Loss function 3 with constant. Change of M is required (Currently M = 20)
     """
     def __init__(self) -> None:
