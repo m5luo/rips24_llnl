@@ -9,6 +9,7 @@ device = (
 )
 
 nstencils = 4
+m = torch.arange(1, nstencils + 1).unsqueeze(1).to(device) # Tensor with Coarsening factors
 
 # Neural Network I/O
 input_size  = 4                                         # Input layer neurons
@@ -19,18 +20,19 @@ psi_size = output_size                                  # Output stencil dimensi
 
 # Vector Properties
 max_m = 4                                               # Max coarsening factor 
-vecsize = 3 + 2*2*max_m                                 # Vector size to use on Loss Functions
+vecsize = 3 + 2 * 2 * max_m                             # Vector size to use on Loss Functions
 veccntr = divmod(vecsize,2)[0]                          # Index to vector center
 
 # Network Hyper-Parameters
-eps = 1e-2                                              # Epsilon factor
-epochs = 150                                            # Number of Epochs NN is trained
+eps = 1e-4                                              # Epsilon factor
+epochs = 100                                            # Number of Epochs NN is trained
 batch_size = 4                       
 learning_rate = 1e-4                                    # Learning Rate (LR)
+batch_num = nstencils // batch_size
 
 # Optimizer Parameters
-momentum = 0.5                                          # Parameter for SGD optimizer
-learn_rate_drop_factor = 0.5                            # Decay
+momentum = 0.8                                          # Parameter for SGD optimizer
+learn_rate_drop_factor = 0.35                           # Decay
 learn_rate_drop_period = 10                             # Number of past epochs to decrease LR
 eps_drop_period = 5                                     # Number of past epochs to decrease Epsilon
 
